@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta charset="UTF-8">
+<title>Lovisas ToDos</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+    </head>
+    <body>
+        <div id="wrapper">
+        <div id="contents">
+      <h1>What's up!</h1>
+      <br>
+      <h4>TODAY'S TASKS</h4>
+      <br>
+      <ul id="todolist">
+        ${ toDos.map(toDos =>`
+            <div class="bg">
+            <input type="checkbox" class="checkboxes">
+            <label>${toDos.task}</label>
+            <br></div>
+            `).join('')}
+      </ul>
+    </div>
+    </div>
+    </body>
+    <!--- <script src="main.js"></script> --->
+</html>

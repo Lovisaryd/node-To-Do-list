@@ -1,0 +1,54 @@
+h1, h4, div {
+    color: #333333;
+    font-family: sans-serif;
+}
+h1, h4{
+    text-align: center;
+}
+#wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+label {
+    margin-left: 5%;
+}
+
+  [type="checkbox"]
+{
+    vertical-align:middle;
+}
+
+input[type="checkbox"]{
+
+    width: 25px;
+    height: 25px;
+    border-radius: 30px;
+    border: 3px solid pink;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    margin-left: 5%;
+}
+
+input:checked{
+   background-color: lightgray;
+   border: none;
+}
+input:checked + label{
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+.bg {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-bottom: 5%;
+    padding: 10px;
+    padding-top: 15px;
+}

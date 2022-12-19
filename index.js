@@ -34,6 +34,16 @@ app.get('/toDos', (req, res)=>{
     }
 })
 
+app.get('/toDos/:id', (req, res)=>{
+    const id = +req.params.id;
+    const i = toDos.findIndex((i) => i.id === id);
+    if(i >= 0){
+    res.status(200).send(toDos[i]);
+    } else {
+        res.status(400).send("Task not found");
+    }
+})
+
 app.post('/toDos', (req, res)=>{
     if(req.body.task){
         const{task} = req.body;
@@ -50,12 +60,13 @@ app.put('/toDos/:id', (req, res)=>{
     const id = +req.params.id;
     const task = req.body;
     const i = toDos.findIndex((i)=> i.id === id);
+    if(i >= 0){
     const updated = {id: id, ... task};
     toDos[i] = updated;
     res.status(201).send({resources: '/toDos/:id'});
-    if(error){
-        res.status(400).send("Bad request");
-    }
+} else {
+    res.status(400).send("Task not found");
+}
 })
 
 app.delete('/toDos/:id', (req, res)=>{
